@@ -16,7 +16,7 @@ export const Header__main = styled(motion.header)`
   justify-content: space-between;
   padding: 0 20px;
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--background-translucent);
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;

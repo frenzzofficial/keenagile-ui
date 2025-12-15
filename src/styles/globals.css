@@ -3,139 +3,124 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --background: oklch(0.9843 0.0017 247.8393);
+  --foreground: oklch(0.1371 0.036 258.5258);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1371 0.036 258.5258);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1371 0.036 258.5258);
+  --primary: oklch(0.4511 0.1731 259.2867);
+  --primary-foreground: oklch(0.9848 0 0);
+  --secondary: oklch(0.9684 0.0068 247.8951);
+  --secondary-foreground: oklch(0.2079 0.0399 265.7275);
+  --muted: oklch(0.9684 0.0068 247.8951);
+  --muted-foreground: oklch(0.5547 0.0407 257.4404);
+  --accent: oklch(0.9684 0.0068 247.8951);
+  --accent-foreground: oklch(0.2079 0.0399 265.7275);
+  --destructive: oklch(0.6368 0.2078 25.3259);
+  --destructive-foreground: oklch(0.9848 0 0);
+  --border: oklch(0.929 0.0126 255.5317);
+  --input: oklch(0.929 0.0126 255.5317);
+  --ring: oklch(0.4511 0.1731 259.2867);
+  --chart-1: oklch(0.4511 0.1731 259.2867);
+  --chart-2: oklch(0.792 0.209 151.711);
+  --chart-3: oklch(0.7015 0.1244 180.0624);
+  --chart-4: oklch(0.5751 0.2098 19.0719);
+  --chart-5: oklch(0.8077 0.1624 77.5981);
+  --sidebar: oklch(0.9607 0.0044 247.8691);
+  --sidebar-foreground: oklch(0.1371 0.036 258.5258);
+  --sidebar-primary: oklch(0.4511 0.1731 259.2867);
+  --sidebar-primary-foreground: oklch(0.9848 0 0);
+  --sidebar-accent: oklch(0.9684 0.0068 247.8951);
+  --sidebar-accent-foreground: oklch(0.2079 0.0399 265.7275);
+  --sidebar-border: oklch(0.929 0.0126 255.5317);
+  --sidebar-ring: oklch(0.4511 0.1731 259.2867);
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "Fira Code", monospace;
   --radius: 0.5rem;
-
-  /* Base Colors */
-  --background: oklch(0.98 0.01 270);
-  /* Soft white with slight indigo tint */
-  --foreground: oklch(0.18 0.03 270);
-  /* Deep indigo-gray for text */
-
-  /* Primary Indigo Theme */
-  --primary: oklch(0.42 0.15 275);
-  /* Vibrant indigo */
-  --primary-foreground: oklch(0.98 0.01 270);
-  /* Light text on primary */
-
-  /* Secondary Accent */
-  --secondary: oklch(0.75 0.18 305);
-  /* Lavender-magenta */
-  --secondary-foreground: oklch(0.2 0.03 270);
-  /* Indigo-gray on accent */
-
-  /* Muted Elements */
-  --muted: oklch(0.22 0.01 270);
-  /* Dark muted indigo */
-  --muted-foreground: oklch(0.7 0.02 270);
-  /* Soft indigo-gray */
-
-  /* Accent & Links */
-  --accent: oklch(0.68 0.2 250);
-  /* Blue-violet */
-  --accent-foreground: oklch(0.98 0.01 270);
-
-  /* Destructive */
-  --destructive: oklch(0.6 0.25 25);
-  /* Warm red-orange */
-
-  /* Borders & Inputs */
-  --border: oklch(0.88 0.01 270);
-  --input: oklch(0.95 0.01 270);
-  --ring: oklch(0.6 0.15 275);
-  /* Indigo ring for focus */
-
-  /* Charts */
-  --chart-1: oklch(0.65 0.22 275);
-  /* Indigo */
-  --chart-2: oklch(0.6 0.18 305);
-  /* Magenta */
-  --chart-3: oklch(0.55 0.16 250);
-  /* Blue-violet */
-  --chart-4: oklch(0.7 0.2 200);
-  /* Sky blue */
-  --chart-5: oklch(0.75 0.18 90);
-  /* Lime-yellow */
-
-  /* Sidebar (optional) */
-  --sidebar: oklch(0.985 0.01 270);
-  --sidebar-foreground: oklch(0.18 0.03 270);
-  --sidebar-primary: oklch(0.42 0.15 275);
-  --sidebar-primary-foreground: oklch(0.98 0.01 270);
-  --sidebar-accent: oklch(0.68 0.2 250);
-  --sidebar-accent-foreground: oklch(0.98 0.01 270);
-  --sidebar-border: oklch(0.88 0.01 270);
-  --sidebar-ring: oklch(0.6 0.15 275);
+  --shadow-x: 0px;
+  --shadow-y: 4px;
+  --shadow-blur: 10px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.05;
+  --shadow-color: hsl(222.2, 84%, 4.9%);
+  --shadow-2xs: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.03);
+  --shadow-xs: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.03);
+  --shadow-sm:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.05), 0px 1px 2px -1px hsl(222.2 84% 4.9% / 0.05);
+  --shadow:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.05), 0px 1px 2px -1px hsl(222.2 84% 4.9% / 0.05);
+  --shadow-md:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.05), 0px 2px 4px -1px hsl(222.2 84% 4.9% / 0.05);
+  --shadow-lg:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.05), 0px 4px 6px -1px hsl(222.2 84% 4.9% / 0.05);
+  --shadow-xl:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.05), 0px 8px 10px -1px hsl(222.2 84% 4.9% / 0.05);
+  --shadow-2xl: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.13);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
 }
 
 .dark {
-  --radius: 0.625rem;
-
-  /* Base Colors */
-  --background: oklch(0.14 0.02 270);
-  /* Deep indigo-black */
-  --foreground: oklch(0.96 0.01 270);
-  /* Near-white with slight indigo tint */
-
-  /* Primary Indigo Theme */
-  --primary: oklch(0.68 0.2 275);
-  /* Bright indigo */
-  --primary-foreground: oklch(0.1 0.02 270);
-  /* Dark text on bright indigo */
-
-  /* Secondary Accent */
-  --secondary: oklch(0.75 0.18 305);
-  /* Lavender-magenta */
-  --secondary-foreground: oklch(0.1 0.02 270);
-
-  /* Muted Elements */
-  --muted: oklch(0.92 0.02 270);
-  /* Subtle indigo-tinted gray */
-  --muted-foreground: #a1a1aa;
-  /* Medium indigo-gray */
-
-  /* Accent & Links */
-  --accent: oklch(0.6 0.18 250);
-  /* Blue-violet */
-  --accent-foreground: oklch(0.1 0.02 270);
-
-  /* Destructive */
-  --destructive: oklch(0.6 0.25 25);
-  /* Warm red-orange */
-
-  /* Borders & Inputs */
-  --border: oklch(0.25 0.01 270);
-  --input: oklch(0.2 0.01 270);
-  --ring: oklch(0.68 0.2 275);
-  /* Indigo ring for focus */
-
-  /* Charts */
-  --chart-1: oklch(0.68 0.2 275);
-  /* Indigo */
-  --chart-2: oklch(0.7 0.18 305);
-  /* Magenta */
-  --chart-3: oklch(0.65 0.16 250);
-  /* Blue-violet */
-  --chart-4: oklch(0.75 0.2 200);
-  /* Sky blue */
-  --chart-5: oklch(0.78 0.18 90);
-  /* Lime-yellow */
-
-  /* Sidebar (optional) */
-  --sidebar: oklch(0.16 0.01 270);
-  --sidebar-foreground: oklch(0.96 0.01 270);
-  --sidebar-primary: oklch(0.68 0.2 275);
-  --sidebar-primary-foreground: oklch(0.1 0.02 270);
-  --sidebar-accent: oklch(0.6 0.18 250);
-  --sidebar-accent-foreground: oklch(0.1 0.02 270);
-  --sidebar-border: oklch(0.25 0.01 270);
-  --sidebar-ring: oklch(0.68 0.2 275);
+  --background: oklch(0.1371 0.036 258.5258);
+  --foreground: oklch(0.9684 0.0068 247.8951);
+  --card: oklch(0.28 0.0369 259.974);
+  --card-foreground: oklch(0.9684 0.0068 247.8951);
+  --popover: oklch(0.28 0.0369 259.974);
+  --popover-foreground: oklch(0.9684 0.0068 247.8951);
+  --primary: oklch(0.6232 0.1879 259.7964);
+  --primary-foreground: oklch(0.9684 0.0068 247.8951);
+  --secondary: oklch(0.28 0.0369 259.974);
+  --secondary-foreground: oklch(0.9684 0.0068 247.8951);
+  --muted: oklch(0.28 0.0369 259.974);
+  --muted-foreground: oklch(0.7107 0.0351 256.7877);
+  --accent: oklch(0.28 0.0369 259.974);
+  --accent-foreground: oklch(0.9684 0.0068 247.8951);
+  --destructive: oklch(0.3959 0.1331 25.7205);
+  --destructive-foreground: oklch(0.9848 0 0);
+  --border: oklch(0.28 0.0369 259.974);
+  --input: oklch(0.28 0.0369 259.974);
+  --ring: oklch(0.6232 0.1879 259.7964);
+  --chart-1: oklch(0.6232 0.1879 259.7964);
+  --chart-2: oklch(0.792 0.209 151.711);
+  --chart-3: oklch(0.6474 0.1062 181.7459);
+  --chart-4: oklch(0.5565 0.1627 14.4233);
+  --chart-5: oklch(0.7789 0.1472 79.7941);
+  --sidebar: oklch(0.1371 0.036 258.5258);
+  --sidebar-foreground: oklch(0.9684 0.0068 247.8951);
+  --sidebar-primary: oklch(0.6232 0.1879 259.7964);
+  --sidebar-primary-foreground: oklch(0.2079 0.0399 265.7275);
+  --sidebar-accent: oklch(0.28 0.0369 259.974);
+  --sidebar-accent-foreground: oklch(0.9684 0.0068 247.8951);
+  --sidebar-border: oklch(0.28 0.0369 259.974);
+  --sidebar-ring: oklch(0.6232 0.1879 259.7964);
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "Fira Code", monospace;
+  --radius: 0.5rem;
+  --shadow-x: 0px;
+  --shadow-y: 4px;
+  --shadow-blur: 10px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.15;
+  --shadow-color: hsl(222.2, 84%, 4.9%);
+  --shadow-2xs: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.07);
+  --shadow-xs: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.07);
+  --shadow-sm:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.15), 0px 1px 2px -1px hsl(222.2 84% 4.9% / 0.15);
+  --shadow:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.15), 0px 1px 2px -1px hsl(222.2 84% 4.9% / 0.15);
+  --shadow-md:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.15), 0px 2px 4px -1px hsl(222.2 84% 4.9% / 0.15);
+  --shadow-lg:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.15), 0px 4px 6px -1px hsl(222.2 84% 4.9% / 0.15);
+  --shadow-xl:
+    0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.15), 0px 8px 10px -1px hsl(222.2 84% 4.9% / 0.15);
+  --shadow-2xl: 0px 4px 10px 0px hsl(222.2 84% 4.9% / 0.38);
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -151,6 +136,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -167,6 +153,24 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
 }
 
 @layer base {
@@ -321,13 +325,13 @@ body {
 
 /* Code for Firefox */
 ::-moz-selection {
-  color: var(--color-white);
-  background: var(--primary-foreground);
+  color: var(--primary-foreground);
+  background: var(--primary);
 }
 
 ::selection {
-  color: var(--color-white);
-  background: var(--primary-foreground);
+  color: var(--primary-foreground);
+  background: var(--primary);
 }
 
 @layer utilities {
