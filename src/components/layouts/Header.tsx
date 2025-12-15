@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Logo from "../ui/logo/Logo";
 import { HeaderConfig } from "@/types/layout";
-import DrawerComponent from "../ui/custom/Drawer";
+import DrawerComponent from "../ui/custom/drawer-component";
 import { cn } from "@/packages/utils/utils.shadcn";
 import { ScrollDirection } from "@/packages/hooks/use-scroll";
 import Navbar_mobile from "../features/navbar/mobile/Navbar_mobile";
