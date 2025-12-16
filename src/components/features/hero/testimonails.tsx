@@ -46,7 +46,7 @@ const Testimonials = () => {
               <TestimonialCard key={testimonial.name} testimonial={testimonial} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:40s] grow">
+          <Marquee pauseOnHover reverse={true} className="[--duration:40s] grow">
             {secondColumn.map((testimonial) => (
               <TestimonialCard key={testimonial.name} testimonial={testimonial} />
             ))}

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/animation.css";
 import { poppins, inter } from "@/packages/configs/config.styles";
 import LayoutProvider from "@/components/providers/LayoutProvider";
 

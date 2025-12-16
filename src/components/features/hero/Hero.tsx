@@ -17,6 +17,7 @@ import ParallxMovementonHoverEffect from "@/components/ui/parallax/parallx-onHov
 const Hero = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   useState(() => setMounted(true));
   const rotatingWords = ["Web Apps", "Websites", "Solutions"];
 
@@ -135,8 +136,12 @@ const Hero = () => {
                 }
                 animationStyle="from-center"
                 videoSrc=""
-                thumbnailSrc={resolvedTheme === "dark" ? "/screens/2.png" : "/screens/5.png"}
+                thumbnailSrc={
+                  resolvedTheme === "dark" ? "/images/icons/blank.png" : "/images/icons/blank.png"
+                }
                 thumbnailAlt="Product Demo"
+                isVideoOpen={isVideoOpen}
+                setIsVideoOpen={setIsVideoOpen}
               />
             )}
           </motion.div>

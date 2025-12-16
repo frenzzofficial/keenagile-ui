@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { createPortal } from "react-dom";
 import { useState } from "react";
+import CustomPortal from "./CustomPortal";
 import { cn } from "@/packages/utils/utils.shadcn";
+import HeroVideo from "@/components/features/hero/hero-video";
 
 export type animationStyle =
   | "from-bottom"
@@ -20,6 +21,8 @@ interface HeroVideoDialogProps {
   thumbnailSrc: string;
   thumbnailAlt?: string;
   trigger?: React.ReactNode;
+  isVideoOpen: boolean;
+  setIsVideoOpen: (isOpen: boolean) => void;
 }
 
 export default function HeroVideoDialog({
@@ -29,6 +32,8 @@ export default function HeroVideoDialog({
   videoSrc,
   thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
+  isVideoOpen,
+  setIsVideoOpen,
 }: HeroVideoDialogProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -51,11 +56,17 @@ export default function HeroVideoDialog({
           {trigger}
         </div>
       </div>
-      {/* {mounted &&
-        createPortal(
-          <HeroVideo videoSrc={videoSrc} animationStyle={animationStyle} />,
-          document.body
-        )} */}
+
+      {mounted && (
+        <CustomPortal triggerKey={"openHeroVideo"}>
+          <HeroVideo
+            videoSrc={videoSrc}
+            animationStyle={animationStyle}
+            isVideoOpen={isVideoOpen}
+            setIsVideoOpen={setIsVideoOpen}
+          />
+        </CustomPortal>
+      )}
     </div>
   );
 }

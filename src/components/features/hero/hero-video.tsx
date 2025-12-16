@@ -1,7 +1,7 @@
 "use client";
 import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { animationStyle } from "@/components/ui/custom/hero-video-dialog";
 
 const animationVariants = {
   "from-bottom": {
@@ -48,19 +48,17 @@ const animationVariants = {
 
 interface HeroVideoProps {
   videoSrc: string;
-  animationStyle?:
-    | "from-bottom"
-    | "from-center"
-    | "from-top"
-    | "from-left"
-    | "from-right"
-    | "fade"
-    | "top-in-bottom-out"
-    | "left-in-right-out";
+  animationStyle?: animationStyle;
+  isVideoOpen: boolean;
+  setIsVideoOpen: (isOpen: boolean) => void;
 }
 
-const HeroVideo = ({ videoSrc, animationStyle = "from-center" }: HeroVideoProps) => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+const HeroVideo = ({
+  videoSrc,
+  animationStyle = "from-center",
+  isVideoOpen,
+  setIsVideoOpen,
+}: HeroVideoProps) => {
   const selectedAnimation = animationVariants[animationStyle];
 
   return (
