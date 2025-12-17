@@ -12,7 +12,7 @@ const Navbar_mobile: React.FC<Navbar_mobileProps> = ({ navbarlinks, isAuthentica
   return (
     <>
       <DrawerTitle></DrawerTitle>
-      <nav className="flex flex-col space-y-4 mt-6 text-center">
+      <nav className="flex flex-col justify-center items-center space-y-4 mt-6 text-center">
         {navbarlinks.map((link) => (
           <>
             {link.id === "home" ? (
