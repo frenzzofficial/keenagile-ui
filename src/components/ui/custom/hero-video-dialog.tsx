@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import CustomPortal from "./CustomPortal";
+import { CustomPortal } from "./custom-portal";
 import { cn } from "@/packages/utils/utils.shadcn";
+import { heroPortalKey } from "@/packages/data/data.hero";
 import HeroVideo from "@/components/features/hero/hero-video";
 
 export type animationStyle =
@@ -58,14 +59,16 @@ export default function HeroVideoDialog({
       </div>
 
       {mounted && (
-        <CustomPortal triggerKey={"openHeroVideo"}>
-          <HeroVideo
-            videoSrc={videoSrc}
-            animationStyle={animationStyle}
-            isVideoOpen={isVideoOpen}
-            setIsVideoOpen={setIsVideoOpen}
-          />
-        </CustomPortal>
+        <>
+          <CustomPortal portalKey={heroPortalKey}>
+            <HeroVideo
+              videoSrc={videoSrc}
+              animationStyle={animationStyle}
+              isVideoOpen={isVideoOpen}
+              setIsVideoOpen={setIsVideoOpen}
+            />
+          </CustomPortal>
+        </>
       )}
     </div>
   );

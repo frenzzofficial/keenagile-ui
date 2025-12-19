@@ -1,11 +1,13 @@
 "use client";
 import { z } from "zod";
+// import { youtubeUrlSchema } from "../configs/config.schema";
 
 // ✅ Load environment variables from .env file
 // ✅ Define schema with defaults and transformations
 const envConfigSchema = z.object({
   NEXT_PUBLIC_FRONTEND: z.url().trim().default("http://localhost:3000"),
-  FRONTEND_API_URL: z.url().trim().default("http://localhost:3000/api"),
+  NEXT_PUBLIC_FRONTEND_API_URL: z.url().trim().default("http://localhost:3000/api"),
+  NEXT_PUBLIC_HERO_VIDEO_URL: z.string().default("https://www.youtube.com/embed/P1WiUCS2ZLU"),
 });
 
 // ✅ Validate process.env safely
@@ -22,7 +24,8 @@ if (!parsed.success) {
 // ✅ Export validated config
 export const envFrontendConfig = Object.freeze({
   APP_FRONTEND: parsed.data.NEXT_PUBLIC_FRONTEND,
-  APP_FRONTEND_API_URL: parsed.data.FRONTEND_API_URL,
+  APP_FRONTEND_API_URL: parsed.data.NEXT_PUBLIC_FRONTEND_API_URL,
+  APP_HERO_VIDEO_URL: parsed.data.NEXT_PUBLIC_HERO_VIDEO_URL,
 });
 
 // ✅ Optional: Export type

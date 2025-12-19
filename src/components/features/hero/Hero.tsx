@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/shadcn/button";
-import { people } from "@/packages/data/data.hero";
+import { envFrontendConfig } from "@/packages/env/env.frontend";
+import { heroPortalKey, people } from "@/packages/data/data.hero";
 import { WordRotate } from "@/components/ui/magic-ui/word-rotate";
 import HeroVideoDialog from "@/components/ui/custom/hero-video-dialog";
 import { AnimatedTooltip } from "@/components/ui/custom/animated-tooltip";
@@ -13,12 +14,14 @@ import { ArrowRight, Play, Gift, Star } from "lucide-react";
 import { useMousePosition } from "@/packages/hooks/use-mouse";
 import AnimatedBackground from "@/components/ui/backgrounds/animated-background";
 import ParallxMovementonHoverEffect from "@/components/ui/parallax/parallx-onHover-effect";
+import { useCustomPortal } from "@/components/providers/CustomPortalProvider";
 
 const Hero = () => {
+  const videoURL = envFrontendConfig.APP_HERO_VIDEO_URL;
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
   useState(() => setMounted(true));
+  const { isOpen, togglePortal } = useCustomPortal(heroPortalKey);
   const rotatingWords = ["Web Apps", "Websites", "Solutions"];
 
   const [mainRef, mouse] = useMousePosition<HTMLDivElement>();
@@ -135,13 +138,13 @@ const Hero = () => {
                   </div>
                 }
                 animationStyle="from-center"
-                videoSrc=""
+                videoSrc={videoURL}
                 thumbnailSrc={
                   resolvedTheme === "dark" ? "/images/icons/blank.png" : "/images/icons/blank.png"
                 }
                 thumbnailAlt="Product Demo"
-                isVideoOpen={isVideoOpen}
-                setIsVideoOpen={setIsVideoOpen}
+                isVideoOpen={isOpen}
+                setIsVideoOpen={togglePortal}
               />
             )}
           </motion.div>

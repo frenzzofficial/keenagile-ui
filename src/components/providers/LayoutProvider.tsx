@@ -7,6 +7,7 @@ import { ThemeProvider } from "./ThemesProvider";
 import { TooltipProvider } from "../ui/shadcn/tooltip";
 import { HamburgerMenuProvider } from "./HamburgerProvider";
 import { useScrollStatus } from "@/packages/hooks/use-scroll";
+import { CustomPortalProvider } from "./CustomPortalProvider";
 import { useBreakpoint } from "@/packages/hooks/use-breakpoints";
 
 const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
@@ -27,16 +28,18 @@ const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
         <FontsProvider>
           <main style={{ minHeight: "100vh", paddingTop: "60px" }}>
             <HamburgerMenuProvider>
-              <Header
-                isMobile={isMobile}
-                isTablet={isTablet}
-                isDesktop={isDesktop}
-                refObject={headerRef}
-                scrollDir={scrollDirection}
-                isScrolled={isScrolled}
-                isAuthenticated={true}
-              />
-              <TooltipProvider>{children}</TooltipProvider>
+              <CustomPortalProvider>
+                <Header
+                  isMobile={isMobile}
+                  isTablet={isTablet}
+                  isDesktop={isDesktop}
+                  refObject={headerRef}
+                  scrollDir={scrollDirection}
+                  isScrolled={isScrolled}
+                  isAuthenticated={true}
+                />
+                <TooltipProvider>{children}</TooltipProvider>
+              </CustomPortalProvider>
             </HamburgerMenuProvider>
           </main>
           <Footer />

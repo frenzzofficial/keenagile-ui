@@ -1,3 +1,5 @@
+export const heroPortalKey = "hero-video-dialog";
+
 export const people = [
   {
     id: 1,

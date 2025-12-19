@@ -36,7 +36,7 @@ const TrustedBrands = () => {
                 className="flex items-center gap-3 mx-8 whitespace-nowrap shrink-0 opacity-50 transition-all duration-300"
               >
                 <Image
-                  src={`/images/brands-logo/inverse-logo/${company.logo}`}
+                  src={`/images/brands-logo/main-icon-logo/${company.logo}`}
                   alt={company.name}
                   width={256}
                   height={256}

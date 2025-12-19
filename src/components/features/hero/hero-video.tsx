@@ -79,7 +79,7 @@ const HeroVideo = ({
               onClick={(e) => e.stopPropagation()}
             >
               <motion.button
-                className="absolute -top-16 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black"
+                className="absolute -top-11 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black"
                 onClick={() => setIsVideoOpen(false)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -87,11 +87,18 @@ const HeroVideo = ({
                 <X className="size-5" />
               </motion.button>
               <div className="size-full border-2 border-white rounded-2xl overflow-hidden isolate">
-                <iframe
-                  src={videoSrc}
+                {/* <iframe
+                  src={videoSrc.replace("https://", "http://")}
                   className="size-full rounded-2xl"
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  ></iframe> */}
+                <iframe
+                  width="934"
+                  height="526"
+                  src={videoSrc}
+                  // src="https://www.youtube.com/embed/P1WiUCS2ZLU"
+                  title="Hacking Animation Intro #vivekcse #hacking #frontend #software"
                 ></iframe>
               </div>
             </motion.div>
